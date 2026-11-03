@@ -9,6 +9,6 @@
 int main(void)
 {
 	/* Beauty of using puts is it automatically append a new line */
-	puts("Programming is like building a multilingual puzzle");
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
