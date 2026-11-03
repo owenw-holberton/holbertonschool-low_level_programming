@@ -8,6 +8,7 @@
 
 int main(void)
 {
-	puts("Programming is like building a multilingual puzzle\n");
+	/* Beauty of using puts is it automatically append a new line */
+	puts("Programming is like building a multilingual puzzle");
 	return (0);
 }
