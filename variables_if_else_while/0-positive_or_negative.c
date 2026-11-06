@@ -1,16 +1,13 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
 #include <stdio.h>
 
-/* betty style doc for function main goes there */
-
 /**
-* main - Generate a random number and checks if it
-* it positive, negative, or zero
-*
-* Return: Always 0 (Success)
-**/
+ * main - Generate a random number and checks if it
+ * is positive, negative, or zero
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
@@ -24,7 +21,7 @@ int main(void)
 	{
 		printf("%d is negative\n", n);
 	}
-	else if (n == 0
+	else if (n == 0)
 	{
 		printf("%d is zero\n", n);
 	}
