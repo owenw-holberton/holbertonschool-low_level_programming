@@ -1,9 +1,6 @@
-owenwong@Owens-MacBook-Pro benchmarking % ./baseline_loop 
 Iterations: 100000000
 Execution time: 0.109067 seconds
-owenwong@Owens-MacBook-Pro benchmarking % ./baseline_loop
 Iterations: 100000000
 Execution time: 0.106656 seconds
-owenwong@Owens-MacBook-Pro benchmarking % ./baseline_loop
 Iterations: 100000000
 Execution time: 0.104455 seconds
