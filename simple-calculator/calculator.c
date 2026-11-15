@@ -63,11 +63,11 @@ void select_opt(int i)
 	}
 	else if (i == 3)
 	{
-		printf("Multiply");
+		multiply();
 	}	
 	else if (i == 4)
 	{
-		printf("Divide");
+		divide();
 	}
 }
 
@@ -106,3 +106,24 @@ void subtract(void)
     printf("Result: %d\n", result);
 }
 
+void multiply(void)
+{
+    int a;
+    int b;
+    int result;
+    
+    printf("A: ");
+    scanf("%d", &a);
+  
+    /* Ask for B */
+    printf("B: ");
+    scanf("%d", &b);
+    
+    result = a * b;
+    printf("Result: %d\n", result);
+}
+
+void divide(void)
+{
+    printf("To be implemented, division");
+}
