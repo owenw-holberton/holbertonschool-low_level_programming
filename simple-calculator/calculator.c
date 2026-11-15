@@ -2,7 +2,9 @@
 #include "main.h"
 
 /*
-* Comment for later
+* main - Entry point for the simple calculator program
+*
+* Return: Always 0 (Success)
 */
 
 int main(void) 
@@ -31,11 +33,21 @@ int main(void)
 	return 0;
 }
 
+/*
+* display_welcome_line - Display welcome line
+*
+* Return: void
+*/
 void display_welcome_line(void)
 {
     printf("Simple Calculator\n");
 }
 
+/*
+* display_menu - Display calculator menu
+*
+* Return: void
+*/
 void display_menu(void)
 {
     printf("1) Add\n");
@@ -45,6 +57,11 @@ void display_menu(void)
     printf("0) Quit\n");
 }
 
+/*
+* select_opt - Select and run the selected operation
+*
+* Return: void
+*/
 void select_opt(int i)
 {
 	if (i == 0)
@@ -69,6 +86,11 @@ void select_opt(int i)
 	}
 }
 
+/*
+* add - Add two numbers
+*
+* Return: void
+*/
 void add(void)
 {
     float a;
@@ -87,6 +109,12 @@ void add(void)
     printf("Result: %.2f\n", result);
 }
 
+
+/*
+* subtract - Subtract two numbers
+*
+* Return: void
+*/
 void subtract(void)
 {
     float a;
@@ -103,6 +131,11 @@ void subtract(void)
     printf("Result: %.2f\n", result);
 }
 
+/*
+* multiply - Multiply two numbers
+*
+* Return: void
+*/
 void multiply(void)
 {
     float a;
@@ -120,6 +153,11 @@ void multiply(void)
     printf("Result: %.2f\n", result);
 }
 
+/*
+* divide - Divide two numbers
+*
+* Return: void
+*/
 void divide(void)
 { 
     float a;
@@ -143,4 +181,3 @@ void divide(void)
         printf("Result: %.2f\n", result);
     }
 }
-
