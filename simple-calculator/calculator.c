@@ -1,72 +1,73 @@
 #include <stdio.h>
 #include "main.h"
 
-/*
-* main - Entry point for the simple calculator program
-*
-* Return: Always 0 (Success)
-*/
-
-int main(void) 
-{	
-    int option;
-    option = 999; /* Assign a value first */
+/**
+ * main - Entry point for the simple calculator program
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int option;
+	/* Assign a value first */
+	option = 999;
 
 	/* Print welcome line */
 	display_welcome_line();
-	 
-    /* Read input and handle and control what happen next */
-    while (option != 0)
-    {
-        display_menu();
-        printf("Choice: "); /* To guide user enter an input */    
-        scanf("%d", &option);
-        if (option >= 0 && option <= 4)
-        {
-            select_opt(option);
-        }
-        else
-        {
-            printf("Invalid choice\n");
-        }
-    }
-	return 0;
+
+	/* Read input and handle and control what happen next */
+	while (option != 0)
+	{
+		display_menu();
+		printf("Choice: "); /* To guide user enter an input */
+		scanf("%d", &option);
+		if (option >= 0 && option <= 4)
+		{
+			select_opt(option);
+		}
+		else
+		{
+			printf("Invalid choice\n");
+		}
+	}
+	return (0);
 }
 
-/*
-* display_welcome_line - Display welcome line
-*
-* Return: void
-*/
+/**
+ * display_welcome_line - Display welcome line
+ *
+ * Return: void
+ */
 void display_welcome_line(void)
 {
-    printf("Simple Calculator\n");
+	printf("Simple Calculator\n");
 }
 
-/*
-* display_menu - Display calculator menu
-*
-* Return: void
-*/
+/**
+ * display_menu - Display calculator menu
+ *
+ * Return: void
+ */
 void display_menu(void)
 {
-    printf("1) Add\n");
-    printf("2) Subtract\n");
-    printf("3) Multiply\n");
-    printf("4) Divide\n");
-    printf("0) Quit\n");
+	printf("1) Add\n");
+	printf("2) Subtract\n");
+	printf("3) Multiply\n");
+	printf("4) Divide\n");
+	printf("0) Quit\n");
 }
 
-/*
-* select_opt - Select and run the selected operation
-*
-* Return: void
-*/
+/**
+ * select_opt - Select and run the selected operation
+ * @i: The int value of the option selected
+ *
+ * Return: void
+ */
 void select_opt(int i)
 {
 	if (i == 0)
 	{
-	    printf("Bye!\n");
+		printf("Bye!\n");
 	}
 	else if (i == 1)
 	{
@@ -79,105 +80,104 @@ void select_opt(int i)
 	else if (i == 3)
 	{
 		multiply();
-	}	
+	}
 	else if (i == 4)
 	{
 		divide();
 	}
 }
 
-/*
-* add - Add two numbers
-*
-* Return: void
-*/
+/**
+ * add - Add two numbers
+ *
+ * Return: void
+ */
 void add(void)
 {
-    float a;
-    float b;
-    float result;
-    
-    /* Ask user for value of A */
-    printf("A: ");
-    scanf("%f", &a);
-  
-    /* Ask for B */
-    printf("B: ");
-    scanf("%f", &b);
-    
-    result = a + b;
-    printf("Result: %.2f\n", result);
+	float a;
+	float b;
+	float result;
+
+	/* Ask user for value of A */
+	printf("A: ");
+	scanf("%f", &a);
+
+	/* Ask for B */
+	printf("B: ");
+	scanf("%f", &b);
+
+	result = a + b;
+	printf("Result: %.2f\n", result);
 }
 
-
-/*
-* subtract - Subtract two numbers
-*
-* Return: void
-*/
+/**
+ * subtract - Subtract two numbers
+ *
+ * Return: void
+ */
 void subtract(void)
 {
-    float a;
-    float b;
-    float result;
-    
-    printf("A: ");
-    scanf("%f", &a);
-  
-    printf("B: ");
-    scanf("%f", &b);
-    
-    result = a - b;
-    printf("Result: %.2f\n", result);
+	float a;
+	float b;
+	float result;
+
+	printf("A: ");
+	scanf("%f", &a);
+
+	printf("B: ");
+	scanf("%f", &b);
+
+	result = a - b;
+	printf("Result: %.2f\n", result);
 }
 
-/*
-* multiply - Multiply two numbers
-*
-* Return: void
-*/
+/**
+ * multiply - Multiply two numbers
+ *
+ * Return: void
+ */
 void multiply(void)
 {
-    float a;
-    float b;
-    float result;
-    
-    printf("A: ");
-    scanf("%f", &a);
-  
-    /* Ask for B */
-    printf("B: ");
-    scanf("%f", &b);
-    
-    result = a * b;
-    printf("Result: %.2f\n", result);
+	float a;
+	float b;
+	float result;
+
+	printf("A: ");
+	scanf("%f", &a);
+
+	/* Ask for B */
+	printf("B: ");
+	scanf("%f", &b);
+
+	result = a * b;
+	printf("Result: %.2f\n", result);
 }
 
-/*
-* divide - Divide two numbers
-*
-* Return: void
-*/
+/**
+ * divide - Divide two numbers
+ *
+ * Return: void
+ */
 void divide(void)
-{ 
-    float a;
-    float b;
-    float result;
-    
-    printf("A: ");
-    scanf("%f", &a);
-  
-    /* Ask for B */
-    printf("B: ");
-    scanf("%f", &b);
+{
+	float a;
+	float b;
+	float result;
 
-    if (b == 0)
-    {
-        printf("Error: division by zero\n");
-    }
-    else
-    {
-        result = a / b;
-        printf("Result: %.2f\n", result);
-    }
+	printf("A: ");
+	scanf("%f", &a);
+
+	/* Ask for B */
+	printf("B: ");
+	scanf("%f", &b);
+
+	if (b == 0)
+	{
+		printf("Error: division by zero\n");
+	}
+	else
+	{
+		result = a / b;
+		printf("Result: %.2f\n", result);
+	}
 }
