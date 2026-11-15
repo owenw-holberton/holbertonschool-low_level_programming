@@ -8,7 +8,7 @@
 int main(void) 
 {	
     int option;
-    option = 0; /* Assign a value first */
+    option = 999; /* Assign a value first */
 
 	/* Print welcome line */
 	display_welcome_line();
@@ -17,10 +17,19 @@ int main(void)
     display_menu();    
  
     /* Read input and handle and control what happen next */
-    printf("Choice: "); /* To guide user enter an input */    
-    scanf("%d", &option);
-    select_opt(option);
-    
+    while (option != 0)
+    {
+        printf("Choice: "); /* To guide user enter an input */    
+        scanf("%d", &option);
+        if (option >= 0 && option <= 4)
+        {
+            select_opt(option);
+        }
+        else
+        {
+            printf("Invalid choice\n");
+        }
+    }
 	return 0;
 }
 
@@ -42,7 +51,7 @@ void select_opt(int i)
 {
 	if (i == 0)
 	{
-		printf("Bye");
+	    printf("Bye!\n");
 	}
 	else if (i == 1)
 	{
