@@ -55,7 +55,7 @@ void select_opt(int i)
 	}
 	else if (i == 1)
 	{
-		printf("Add");
+		add();
 	}
 	else if (i == 2)
 	{
@@ -71,3 +71,20 @@ void select_opt(int i)
 	}
 }
 
+void add(void)
+{
+    int a;
+    int b;
+    int result;
+    
+    /* Ask user for value of A */
+    printf("A: ");
+    scanf("%d", &a);
+  
+    /* Ask for B */
+    printf("B: ");
+    scanf("%d", &b);
+    
+    result = a + b;
+    printf("Result: %d\n", result);
+}  

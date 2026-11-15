@@ -4,5 +4,6 @@
 void display_welcome_line(void);
 void display_menu(void);
 void select_opt(int i);
+void add(void);
 
 #endif /* MAIN_H */
