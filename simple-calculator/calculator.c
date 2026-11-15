@@ -59,7 +59,7 @@ void select_opt(int i)
 	}
 	else if (i == 2)
 	{
-		printf("Sub");
+		subtract();
 	}
 	else if (i == 3)
 	{
@@ -87,4 +87,22 @@ void add(void)
     
     result = a + b;
     printf("Result: %d\n", result);
-}  
+}
+
+void subtract(void)
+{
+    int a;
+    int b;
+    int result;
+    
+    printf("A: ");
+    scanf("%d", &a);
+  
+    /* Ask for B */
+    printf("B: ");
+    scanf("%d", &b);
+    
+    result = a - b;
+    printf("Result: %d\n", result);
+}
+
