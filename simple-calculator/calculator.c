@@ -12,13 +12,11 @@ int main(void)
 
 	/* Print welcome line */
 	display_welcome_line();
-	
-    /* Display a menu */
-    display_menu();    
- 
+	 
     /* Read input and handle and control what happen next */
     while (option != 0)
     {
+        display_menu();
         printf("Choice: "); /* To guide user enter an input */    
         scanf("%d", &option);
         if (option >= 0 && option <= 4)
@@ -73,57 +71,76 @@ void select_opt(int i)
 
 void add(void)
 {
-    int a;
-    int b;
-    int result;
+    float a;
+    float b;
+    float result;
     
     /* Ask user for value of A */
     printf("A: ");
-    scanf("%d", &a);
+    scanf("%f", &a);
   
     /* Ask for B */
     printf("B: ");
-    scanf("%d", &b);
+    scanf("%f", &b);
     
     result = a + b;
-    printf("Result: %d\n", result);
+    printf("Result: %.2f\n", result);
 }
 
 void subtract(void)
 {
-    int a;
-    int b;
-    int result;
+    float a;
+    float b;
+    float result;
     
     printf("A: ");
-    scanf("%d", &a);
+    scanf("%f", &a);
   
-    /* Ask for B */
     printf("B: ");
-    scanf("%d", &b);
+    scanf("%f", &b);
     
     result = a - b;
-    printf("Result: %d\n", result);
+    printf("Result: %.2f\n", result);
 }
 
 void multiply(void)
 {
-    int a;
-    int b;
-    int result;
+    float a;
+    float b;
+    float result;
     
     printf("A: ");
-    scanf("%d", &a);
+    scanf("%f", &a);
   
     /* Ask for B */
     printf("B: ");
-    scanf("%d", &b);
+    scanf("%f", &b);
     
     result = a * b;
-    printf("Result: %d\n", result);
+    printf("Result: %.2f\n", result);
 }
 
 void divide(void)
-{
-    printf("To be implemented, division");
+{ 
+    float a;
+    float b;
+    float result;
+    
+    printf("A: ");
+    scanf("%f", &a);
+  
+    /* Ask for B */
+    printf("B: ");
+    scanf("%f", &b);
+
+    if (b == 0)
+    {
+        printf("Error: division by zero\n");
+    }
+    else
+    {
+        result = a / b;
+        printf("Result: %.2f\n", result);
+    }
 }
+
