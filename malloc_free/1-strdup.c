@@ -35,13 +35,13 @@ char *_strdup(char *str)
 			i++;
 		}
 
-		str_cp = malloc(sizeof(char) * size);
+		str_cp = malloc((sizeof(char) * size) + 1);
 
 		/* Handle malloc return */
 		if (str_cp == NULL)
 			return (NULL);
 
-		while (j < size)
+		while (j <= size)
 		{
 			str_cp[j] = str[j];
 			j++;
