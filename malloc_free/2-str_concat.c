@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+* str_concat - Concatenates two strings
+*
+* @s1: first part of the concatenated string
+* @s2: second half
+*
+* Return: ptr
+*/
+
 char *str_concat(char *s1, char *s2)
 {
 	int len_s1 = 0;
