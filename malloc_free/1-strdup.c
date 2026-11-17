@@ -16,6 +16,7 @@ char *_strdup(char *str)
 	int size;
 	char *str_cp;
 	int i;
+	int j;
 
 	if (str == NULL)
 	{
@@ -23,14 +24,23 @@ char *_strdup(char *str)
 	}
 	else
 	{
-		size = sizeof(str);
-		str_cp = malloc(sizeof(char) * size);
 		i = 0;
+		j = 0;
+		size = 0;
 
-		while (i <= size)
+		/* Find the length of the str */
+		while (str[i] != '\0')
 		{
-			str_cp[i] = str[i];
+			size += 1;
 			i++;
+		}
+
+		str_cp = malloc(sizeof(char) * size);
+
+		while (j <= size)
+		{
+			str_cp[j] = str[j];
+			j++;
 		}
 	}
 	return (str_cp);
