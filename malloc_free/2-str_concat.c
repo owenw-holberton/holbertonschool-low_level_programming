@@ -13,51 +13,83 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int len_s1 = 0;
-	int len_s2 = 0;
+	int len_s1;
+	int len_s2;
+	int cbn_size;
+	char *cbn_s;
 	int i = 0;
 	int j = 0;
-	int size = 0;
-	char *cbn_s;
 
-	/* Calculate size of the array */
-	while (s1[i] != '\0')
+	if (s1 == NULL)
 	{
-		len_s1 += 1;
-		i++;
-	}
-
-	/* Reset i to 0 */
-	i = 0;
-
-	while (s2[i] != '\0')
+		len_s1 = 0;
+	}	
+	else
 	{
-		len_s2 += 1;
-		i++;
+		len_s1 = find_size_of_str(s1);
 	}
-
-	size = len_s1 + len_s2;
-	cbn_s = malloc(sizeof(char) * size + 1);
+		
+	if (s2 == NULL)
+	{
+		len_s2 = 0;
+	}
+	else
+	{
+		len_s2 = find_size_of_str(s2);
+	}
+	
+	cbn_size = len_s1 + len_s2;
+	cbn_s = malloc(sizeof(char) * cbn_size + 1);
 
 	/* Handle malloc return */
 	if (cbn_s == NULL)
 		return (NULL);
-
-	i = 0;
-	while (j < len_s1)
+	
+	if (len_s1 == 0)
 	{
-		cbn_s[j] = s1[i];
+		cbn_s[j] = '\0';
 		j++;
-		i++;
 	}
-
-	i = 0;
-	while (j < size)
+	else
 	{
-		cbn_s[j] = s2[i];
+		while (i < len_s1)
+		{
+			cbn_s[j] = s1[i];
+			j++;
+			i++;
+		}
+	}	
+	
+	i = 0;
+	if (len_s2 == 0)
+	{
+		cbn_s[j] = '\0';
 		j++;
-		i++;
 	}
-
+	else
+	{
+		while (i < len_s2)
+		{
+			cbn_s[j] = s2[i];
+			j++;
+			i++;
+		}
+	}
 	return (cbn_s);
+}
+
+int find_size_of_str(char *s)
+{
+	int size;
+	int i;
+
+	size = 0;
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		size += 1;
+		i++;
+	}
+	return size;
 }
